@@ -11,3 +11,6 @@
 1. 문제 풀이에 주요한 개념을 작성한다.
 2. 추가로 전달할 사항이 있으면 추가한다.
 3. 코드 승인은 문제 풀이가 이해가 될 때 승인한다.
+
+# 해결한 문제 
+해결한 문제는 [여기](https://github.com/Rain3321/algorithm_study/blob/main/solvedProblem.md) 에서 확인할 수 있습니다.
