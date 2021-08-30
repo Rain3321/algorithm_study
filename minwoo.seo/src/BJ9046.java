@@ -1,32 +1,25 @@
-import java.io.*;
+import java.util.*;
 
 public class BJ9046 {
-  public static void main(String[] args) throws IOException {
-    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    int T = Integer.parseInt(br.readLine());
-    int[] alphabet;
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int T = sc.nextInt();
+    sc.nextLine();
     while (T-- > 0) {
-      alphabet = new int[26];
-      String s = br.readLine().replace(" ","");
-      for (char c : s.toCharArray()) {
-        alphabet[c-'a']++;
-      }
-      int max = 0, cnt = 0;
-      int idx = 0;
-      for (int i = 0; i < 26; i++) {
-        if(max < alphabet[i]) {
+      int[] alphabet = new int[26];
+      String s = sc.nextLine().replace(" ","");
+      int max = 0, cnt = 0, idx = 0;
+      for (int i = 0; i < s.length(); i++) {
+        int x = ++alphabet[s.charAt(i)-'a'];
+        if(max < x) {
           cnt = 0;
-          max = alphabet[i];
-          idx = i;
+          max = x;
+          idx = s.charAt(i)-'a';
         }
-        else if(max == alphabet[i]) {
-          cnt++;
-        }
+        else if(max == x) cnt++;
       }
-      if(cnt == 0)
-        System.out.println((char)(idx+'a'));
-      else
-        System.out.println('?');
+      if(cnt == 0) System.out.println((char)(idx+'a'));
+      else System.out.println('?');
     }
   }
 }
