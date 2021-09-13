@@ -7,6 +7,15 @@
 |:---:|:---:|
 [바로가기]() | [바로가기]()
 
+
+# 2021/09/06
+| 문제 이름 | Java | Python |
+|:-----:|:---:|:---:|
+| [명제 증명](https://www.acmicpc.net/problem/2224) | [바로가기](https://github.com/Rain3321/algorithm_study/blob/main/minwoo.seo/src/BJ2224.java) | [바로가기](https://github.com/Rain3321/algorithm_study/tree/main/minwoo.lee/2021.09.06/BJ2224.py)
+| [강의실 배정](https://www.acmicpc.net/problem/11000) |[바로가기](https://github.com/Rain3321/algorithm_study/blob/main/minwoo.seo/src/BJ11000.java) | [바로가기](https://github.com/Rain3321/algorithm_study/tree/main/minwoo.lee/2021.09.06/BJ11000.py)
+| [컨베이어 벨트 위의 로봇](https://www.acmicpc.net/problem/20055) | [바로가기](https://github.com/Rain3321/algorithm_study/blob/main/minwoo.seo/src/BJ20055.java) | [바로가기](https://github.com/Rain3321/algorithm_study/tree/main/minwoo.lee/2021.09.07/BJ20055.py)
+| [어른 상어](https://www.acmicpc.net/problem/19237) | [바로가기]() | [바로가기]()
+
 ## 2021/09/03
 | 문제 이름 | Java | Python |
 |:-----:|:---:|:---:|
