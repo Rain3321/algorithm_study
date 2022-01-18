@@ -8,8 +8,7 @@ public class BOJ15787 {
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(bf.readLine());
-        // 왜 HashSet을 썻는가?
-        ArrayList<String> arr = new ArrayList<>();
+        HashSet<String> set = new HashSet<>();
         int N, M;
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
@@ -21,40 +20,35 @@ public class BOJ15787 {
             st = new StringTokenizer(bf.readLine());
             command = Integer.parseInt(st.nextToken());
             train = Integer.parseInt(st.nextToken());
-            try {
-                seat = Integer.parseInt(st.nextToken());
-            } catch (NoSuchElementException e) {
-            }
+            // 수정 -> command 값이 1과 2이면 값을 받고 3,4이면 값을 받지 않으면 된다.
+            if (command == 1 || command == 2) seat = Integer.parseInt(st.nextToken());
             command();
 
         }
         for (int i = 0; i < N; i++) {
-            if(!arr.contains(String.valueOf(trains[i])))
-                arr.add(String.valueOf(trains[i]));
+            set.add(String.valueOf(trains[i]));
         }
-        System.out.println(arr.size());
+        System.out.println(set.size());
         bf.close();
     }
 
     public static void command() {
-        if (command == 1 && trains[train - 1][seat - 1] == '0') {
+        // 자리가 비어져 있든 채워져 있든 1을 넣는 것은 문제가 없어서 불필요한 조건을 없앨 수 있다라고 생각
+        if (command == 1)
             trains[train - 1][seat - 1] = '1';
-        } else if (command == 2 && trains[train - 1][seat - 1] == '1') {
+            // 하차도 역시 자리가 채워져 있든 비어있든 하차를 표현하는 0을 넣는 것은 문제가 없어 불필요한 조건을 없앨 수 있다고 생각
+        else if (command == 2)
             trains[train - 1][seat - 1] = '0';
-        } else if (command == 3) {
+        else if (command == 3) {
             for (int s = 19; s > 0; s--) {
                 trains[train - 1][s] = trains[train - 1][s - 1];
             }
             trains[train - 1][0] = '0';
         } else {
-            if (command == 4) {
-                for (int s = 0; s < 19; s++) {
-                    trains[train - 1][s] = trains[train - 1][s + 1];
-                }
-                trains[train - 1][19] = '0';
-                return;
+            for (int s = 0; s < 19; s++) {
+                trains[train - 1][s] = trains[train - 1][s + 1];
             }
+            trains[train - 1][19] = '0';
         }
-
     }
 }
