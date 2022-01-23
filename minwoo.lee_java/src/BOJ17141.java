@@ -37,7 +37,7 @@ public class BOJ17141 {
             System.out.println(-1);
     }
 
-    static void getCombine(int start, int cnt, Stack candi) {
+    static void getCombine(int start, int cnt, Stack<Integer> candi) {
         if (cnt == M) {
             BFS(candi);
             return;
@@ -49,11 +49,11 @@ public class BOJ17141 {
         }
     }
 
-    static void BFS(Stack candidate) {
+    static void BFS(Stack<Integer> candidate) {
         boolean[][] discovered = new boolean[N][N];
         Queue<Location> queue = new LinkedList<>();
         for (int i = 0; i < M; i++) {
-            Location virus = locations.get((Integer)candidate.get(i));
+            Location virus = locations.get((Integer) candidate.get(i));
             discovered[virus.x][virus.y] = true;
             queue.add(virus);
         }
@@ -89,7 +89,7 @@ public class BOJ17141 {
             result = Math.min(result, value);
     }
 
-    static class Location implements Cloneable {
+    static class Location {
         int x, y, time;
 
         Location(int x, int y, int time) {
