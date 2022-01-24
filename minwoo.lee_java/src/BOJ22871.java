@@ -18,15 +18,17 @@ public class BOJ22871 {
         right = Long.MAX_VALUE;
         while (left <= right) {
             mid = left + (right - left) / 2;
-            if (croos(mid)) {
+            if (cross(mid)) {
                 result = mid;
                 right = mid - 1;
-            } else left = mid + 1;
+            } else {
+                left = mid + 1;
+            }
         }
         System.out.println(result);
     }
 
-    static boolean croos(long k) {
+    static boolean cross(long k) {
         Stack<Integer> stack = new Stack<>();
         boolean[] discovered = new boolean[arr.length];
         discovered[0] = true;
