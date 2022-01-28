@@ -42,16 +42,16 @@ public class BJ17141 {
   // 2. 뽑은 위치에 바이러스 놓고 BFS 돌리기
   // 3. 값 비교
   private static void combination(int i, int n, Stack<int[]> virus) {
-    if (n == canBeVirus.size()) {
+    if (n <= canBeVirus.size()) {
       if (i == M) {
         int time = BFS(virus);
         ans = Math.min(ans, time);
+      } else if (n < canBeVirus.size()) {
+        virus.push(canBeVirus.get(n));
+        combination(i + 1, n + 1, virus);
+        virus.pop();
+        combination(i, n + 1, virus);
       }
-    } else {
-      virus.push(canBeVirus.get(n));
-      combination(i + 1, n + 1, virus);
-      virus.pop();
-      combination(i, n + 1, virus);
     }
   }
 
