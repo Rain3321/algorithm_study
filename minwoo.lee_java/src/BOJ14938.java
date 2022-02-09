@@ -2,17 +2,14 @@ import java.io.*;
 import java.util.StringTokenizer;
 
 public class BOJ14938 {
-    static int n, m, r, item;
-    static int[] arr;
-
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        n = Integer.parseInt(st.nextToken());
-        m = Integer.parseInt(st.nextToken());
-        r = Integer.parseInt(st.nextToken());
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
+        int r = Integer.parseInt(st.nextToken());
         st = new StringTokenizer(br.readLine());
-        arr = new int[n + 1];
+        int[] arr = new int[n + 1];
         for (int i = 1; i <= n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
@@ -43,6 +40,7 @@ public class BOJ14938 {
                 }
             }
         }
+        int item = 0;
         for (int start = 1; start <= n; start++) {
             int temp = arr[start];
             for (int to = 1; to <= n; to++) {
