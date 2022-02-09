@@ -17,3 +17,7 @@
 
 # 해결한 문제 
 해결한 문제는 [여기](https://github.com/Rain3321/algorithm_study/blob/main/solvedProblem.md) 에서 확인할 수 있습니다.
+
+# 참고사항
+## 간단한 git 사용법
+[링크](https://github.com/Rain3321/algorithm_study/blob/main/HowToUseGit.md)
