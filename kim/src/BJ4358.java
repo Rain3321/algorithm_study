@@ -8,7 +8,7 @@ public class BJ4358 {
 
         // 나무의 정보를 map으로 저장해준다.
         Map<String, Integer> map = new HashMap<>();
-        int tot = 0; // 총 나무의 수를 cnt할 변수, map.size()는 안됨
+        int tot = 0; // 총 나무의 수를 cnt할 변수, map.size()는 안됨.
 
         String s = "";
         // 입력이 들어올때까지 반복
