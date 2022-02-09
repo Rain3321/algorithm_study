@@ -7,6 +7,36 @@
 |:---:|:---:|
 [바로가기]() | [바로가기]()
 
+# 2022/01/24
+| 문제 이름 | Java |
+|:-----:|:---:|
+| [출석체크](https://www.acmicpc.net/problem/20438) | [바로가기1](https://github.com/Rain3321/algorithm_study/blob/main/minwoo.seo/src/BJ20438.java), [바로가기2](https://github.com/Rain3321/algorithm_study/tree/main/minwoo.lee_java/src/BOJ20438.java)
+| [꿀 따기](https://www.acmicpc.net/problem/21758) | [바로가기1](https://github.com/Rain3321/algorithm_study/blob/main/minwoo.seo/src/BJ21758.java), [바로가기2](https://github.com/Rain3321/algorithm_study/tree/main/minwoo.lee_java/src/BOJ21758.java)
+| [수들의 합 4](https://www.acmicpc.net/problem/2015) | [바로가기1](https://github.com/Rain3321/algorithm_study/blob/main/minwoo.seo/src/BJ15787.java), [바로가기2](https://github.com/Rain3321/algorithm_study/tree/main/minwoo.lee_java/src/BOJ15787.java)
+
+# 2022/01/17
+| 문제 이름 | Java |
+|:-----:|:---:|
+| [기차가 어둠을 헤치고 은하수를](https://www.acmicpc.net/problem/15787) | [바로가기1](https://github.com/Rain3321/algorithm_study/blob/main/minwoo.seo/src/BJ15787.java), [바로가기2](https://github.com/Rain3321/algorithm_study/tree/main/minwoo.lee_java/src/BO15787.java)
+| [절댓값 힙](https://www.acmicpc.net/problem/11286) | [바로가기1](https://github.com/Rain3321/algorithm_study/blob/main/minwoo.seo/src/BJ11286.java), [바로가기2](https://github.com/Rain3321/algorithm_study/tree/main/minwoo.lee_java/src/BOJ11286.java)
+| [징검다리 건너기(large)](https://www.acmicpc.net/problem/22871) | [바로가기1](https://github.com/Rain3321/algorithm_study/blob/main/minwoo.seo/src/BJ22871.java), [바로가기2](https://github.com/Rain3321/algorithm_study/tree/main/minwoo.lee_java/src/BOJ22871.java)
+| [연구소2](https://www.acmicpc.net/problem/17141) | [바로가기1](https://github.com/Rain3321/algorithm_study/blob/main/minwoo.seo/src/BJ17141.java), [바로가기2](https://github.com/Rain3321/algorithm_study/tree/main/minwoo.lee_java/src/BOJ17141.java)
+| [애너그램](https://www.acmicpc.net/problem/6443) | [바로가기1](https://github.com/Rain3321/algorithm_study/blob/main/minwoo.seo/src/BJ6443.java), [바로가기2](https://github.com/Rain3321/algorithm_study/tree/main/minwoo.lee_java/src/BOJ6443.java)
+
+# 2022/01/10
+| 문제 이름 | Java |
+|:-----:|:---:|
+| [배열돌리기](https://www.acmicpc.net/problem/16926) | [바로가기1](https://github.com/Rain3321/algorithm_study/blob/main/minwoo.seo/src/BJ16926.java), [바로가기2](https://github.com/Rain3321/algorithm_study/tree/main/minwoo.lee_java/src/BOJ16926.java)
+| [부분 삼각 수열](https://www.acmicpc.net/problem/1548) | [바로가기1](https://github.com/Rain3321/algorithm_study/blob/main/minwoo.seo/src/BJ1548.java), [바로가기2](https://github.com/Rain3321/algorithm_study/tree/main/minwoo.lee_java/src/BOJ1548.java)
+| [회문](https://www.acmicpc.net/problem/17609) | [바로가기1](https://github.com/Rain3321/algorithm_study/blob/main/minwoo.seo/src/BJ17609.java), [바로가기2](https://github.com/Rain3321/algorithm_study/tree/main/minwoo.lee_java/src/BOJ17609.java)
+| [동전](https://www.acmicpc.net/problem/9084) | [바로가기1](https://github.com/Rain3321/algorithm_study/blob/main/minwoo.seo/src/BJ9084.java), [바로가기2](https://github.com/Rain3321/algorithm_study/tree/main/minwoo.lee_java/src/BOJ9084.java)
+| [벽 부수고 이동하기](https://www.acmicpc.net/problem/2206) | [바로가기1](https://github.com/Rain3321/algorithm_study/blob/main/minwoo.seo/src/BJ2206.java), [바로가기2](https://github.com/Rain3321/algorithm_study/tree/main/minwoo.lee_java/src/BOJ2206.java)
+| [최단경로](https://www.acmicpc.net/problem/1753) | [바로가기1](https://github.com/Rain3321/algorithm_study/blob/main/minwoo.seo/src/BJ1753.java), [바로가기2](https://github.com/Rain3321/algorithm_study/tree/main/minwoo.lee_java/src/BOJ1753.java)
+
+# 2021/09/13
+| 문제 이름 | Java | Python |
+|:-----:|:---:|:---:|
+| [스타트링크](https://www.acmicpc.net/problem/5014) | 없음 | [바로가기](https://github.com/Rain3321/algorithm_study/tree/main/minwoo.lee/2021.09.13/BJ5014.py)
 
 # 2021/09/06
 | 문제 이름 | Java | Python |
