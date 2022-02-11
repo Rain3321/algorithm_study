@@ -30,12 +30,10 @@ public class BJ22944 {
                 }
         }// end Input
 
-        if (!bfs())
-            System.out.println("-1");
-
+        System.out.println(bfs());
     }
 
-    private static boolean bfs() {
+    private static int bfs() {
         int cnt = 0;
         while (!q.isEmpty()) {
             int size = q.size();
@@ -49,11 +47,9 @@ public class BJ22944 {
                     if (ni < 0 || nj < 0 || ni >= n || nj >= n)
                         continue;
 
-                    if (map[ni][nj] == 'E') {
+                    if (map[ni][nj] == 'E')
                         // 도착지점 도착!!
-                        System.out.println(cnt + 1);
-                        return true;
-                    }
+                        return cnt + 1;
 
                     int nd = p.d;
                     int nh = p.h;
@@ -81,7 +77,7 @@ public class BJ22944 {
             }
             cnt++;
         }
-        return false;
+        return -1;
     } // end bfs()
 }
 
