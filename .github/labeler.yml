@@ -1,3 +1,4 @@
 Problem:
-  - any: ['**/src/*.java', '**/*.py', '**/*.cpp']
-  
+  - minwoo.seo/**
+  - minwoo.lee_java/**
+  - kim/**
