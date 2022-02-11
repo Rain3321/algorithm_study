@@ -25,7 +25,7 @@ public class BJ4358 {
 
         // map의 내용을 key값 순서로 정렬
         // map은 순서가 존재하지 않기 때문에 List에 담거나 배열로 만들어줘야 한다
-        Object[] mapkey = map.keySet().toArray();
+        String[] mapkey = map.keySet().toArray(new String[0]);
         Arrays.sort(mapkey);
 
         if (tot > 0) {
