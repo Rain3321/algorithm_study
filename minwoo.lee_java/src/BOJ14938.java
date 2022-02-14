@@ -22,21 +22,20 @@ public class BOJ14938 {
             graph[from][to] = value;
             graph[to][from] = value;
         }
-        int[][] dp = new int[n + 1][n + 1];
+
         for (int from = 1; from <= n; from++) {
-            dp[from][from] = 0;
             for (int to = 1; to <= n; to++) {
                 if (from != to && graph[from][to] == 0) {
-                    dp[from][to] = 100000;
+                    graph[from][to] = 100000;
                 } else {
-                    dp[from][to] = graph[from][to];
+                    graph[from][to] = graph[from][to];
                 }
             }
         }
         for (int k = 1; k <= n; k++) {
             for (int from = 1; from <= n; from++) {
                 for (int to = 1; to <= n; to++) {
-                    dp[from][to] = Math.min(dp[from][to], dp[from][k] + dp[k][to]);
+                    graph[from][to] = Math.min(graph[from][to], graph[from][k] + graph[k][to]);
                 }
             }
         }
@@ -44,7 +43,7 @@ public class BOJ14938 {
         for (int start = 1; start <= n; start++) {
             int temp = arr[start];
             for (int to = 1; to <= n; to++) {
-                if (start != to && dp[start][to] <= m) {
+                if (start != to && graph[start][to] <= m) {
                     temp += arr[to];
                 }
             }
