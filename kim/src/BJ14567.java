@@ -10,9 +10,12 @@ public class BJ14567 {
         int n = Integer.parseInt(st.nextToken()); // 과목 수
         int m = Integer.parseInt(st.nextToken()); // 조건 수
 
+        int[] semester = new int[n + 1]; // 최대학기를 저장할 배열 (인덱스: 과목번호, 값: 최소학기)
         ArrayList<Integer>[] adj = new ArrayList[n + 1]; // 인접리스트
-        for (int i = 0; i < adj.length; i++)
+        for (int i = 0; i <= n; i++) {
             adj[i] = new ArrayList<>();
+            semester[i] = 1;
+        }
 
         for (int i = 1; i <= m; i++) {
             st = new StringTokenizer(br.readLine());
@@ -21,26 +24,16 @@ public class BJ14567 {
             adj[v2].add(v1);
         } // end Input
 
-        int[] semester = new int[n + 1]; // 최대학기를 저장할 배열 (인덱스: 과목번호, 값: 최대학기)
-        StringBuilder sb = new StringBuilder("1 ");
+        StringBuilder sb = new StringBuilder();
 
-        for (int i = 2; i <= n; i++) {
-            // 선수과목 없음
-            if (adj[i].isEmpty()) {
-                sb.append("1 ");
-                continue;
-            }
-
+        for (int i = 1; i <= n; i++) {
             // 현재 과목의 선수과목들을 인접리스트로 탐색
-            int maxSemester = 0;
             for (Integer prerequisite : adj[i])
-                maxSemester = Math.max(maxSemester, semester[prerequisite]);
+                semester[i] = Math.max(semester[i], semester[prerequisite] + 1);
 
-            // 선수과목 학기 중 가장 큰 것 + 1
-            semester[i] = maxSemester + 1;
-            sb.append((semester[i] + 1) + " ");
+            // 선수과목 학기 중 가장 큰 것
+            sb.append(semester[i] + " ");
         }
         System.out.println(sb);
-
     }
 }
