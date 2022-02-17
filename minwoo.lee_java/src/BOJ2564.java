@@ -29,14 +29,13 @@ public class BOJ2564 {
         }
         int distanceSum = 0;
         for (int i = 1; i <= storeCnt; i++) {
-            int minDistance = getDistance(location[i], location[storeCnt + 1]);
-            distanceSum += minDistance;
+            distanceSum += getDistance(location[i], location[storeCnt + 1]);
         }
         System.out.println(distanceSum);
     }
 
     private static int getDistance(int[] store, int[] dongguen) {
-        int minDistance = Integer.MAX_VALUE;
+        int minDistance = 0;
         int heightGap = Math.abs(store[0] - dongguen[0]);
         int widthGap = Math.abs(store[1] - dongguen[1]);
         // 상점과 동근의 위치가 북,남 또는 남,북 인경우
@@ -45,7 +44,7 @@ public class BOJ2564 {
             int left = store[1] + dongguen[1];
             // 오른쪽 방향에서 만나는 경우
             int right = 2 * w - left;
-            minDistance = Math.min(minDistance, h + Math.min(left, right));
+            minDistance = h + Math.min(left, right);
         }
         // 상점과 동근의 위치가 북,남 또는 남,북 인경우
         else if (widthGap == w) {
@@ -53,11 +52,11 @@ public class BOJ2564 {
             int up = store[0] + dongguen[0];
             // 아래에서 만나는 경우
             int down = 2 * h - up;
-            minDistance = Math.min(minDistance, w + Math.min(up, down));
+            minDistance = w + Math.min(up, down);
         }
         // 서로 반대 방향이 아니면 두 좌표사이의 거리를 구하는 공식을 사용한다.
         else {
-            minDistance = Math.min(minDistance, heightGap + widthGap);
+            minDistance = heightGap + widthGap;
         }
         return minDistance;
     }
