@@ -12,10 +12,7 @@ public class BOJ2812 {
         Stack<Character> stack = new Stack<>();
         stack.push(nums[0]);
         for (int i = 1; i < nums.length; i++) {
-            while (!stack.isEmpty() && k != 0) {
-                if (stack.peek() >= nums[i]) {
-                    break;
-                }
+            while (!stack.isEmpty() && k != 0 && stack.peek() < nums[i]) {
                 stack.pop();
                 k--;
             }
