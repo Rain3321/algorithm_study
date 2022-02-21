@@ -19,9 +19,7 @@ public class BJ2812 {
         for (int i = 1; i < n; i++) {
             char c = s.charAt(i);
 
-            while (!stack.isEmpty() && cnt < k) {
-                if (stack.peek() >= c)
-                    break;
+            while (!stack.isEmpty() && cnt < k && stack.peek() < c) {
                 // 전이 더 작으면 전에거를 제거
                 stack.pop();
                 cnt++;
