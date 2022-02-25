@@ -42,12 +42,12 @@ public class BJ9466 {
             ans += cnt - 1;
             return;
         }
+        visit[now] = true;
         if (students[now] == now) {
             // 혼자 할꺼면 이전것들은 나가리
             ans += cnt - 1;
             return;
         }
-        visit[now] = true;
         currVisit[now] = cnt;
         go(students[now], cnt + 1);
         currVisit[now] = 0;
