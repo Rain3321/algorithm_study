@@ -22,8 +22,7 @@ public class BJ2138 {
 
         arr1 = s.toCharArray();
         // 첫 번째 스위치 누르기
-        arr1[0] = on(arr1[0]);
-        arr1[1] = on(arr1[1]);
+        on(0);
         cnt = go(1);
         if (check())
             min = (min == -1) ? cnt : Math.min(cnt, min);
@@ -31,8 +30,12 @@ public class BJ2138 {
         System.out.println(min);
     }
 
-    private static char on(char c) {
-        return (c == '1') ? '0' : '1';
+    private static void on(int i) {
+        if (i - 1 >= 0)
+            arr1[i - 1] = (arr1[i - 1] == '1') ? '0' : '1';
+        arr1[i] = (arr1[i] == '1') ? '0' : '1';
+        if (i + 1 < n)
+            arr1[i + 1] = (arr1[i + 1] == '1') ? '0' : '1';
     }
 
     private static boolean check() {
@@ -47,10 +50,7 @@ public class BJ2138 {
         for (int i = 1; i < n; i++) {
             if (arr1[i - 1] != arr2[i - 1]) {
                 // 스위치 누르기
-                arr1[i - 1] = on(arr1[i - 1]);
-                arr1[i] = on(arr1[i]);
-                if (i + 1 < n)
-                    arr1[i + 1] = on(arr1[i + 1]);
+                on(i);
                 cnt++;
             }
         }
