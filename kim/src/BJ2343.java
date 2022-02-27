@@ -21,7 +21,7 @@ public class BJ2343 {
         // end Input
 
         int l = 1;
-        int r = Integer.MAX_VALUE;
+        int r = 1000000001;
         int ans = r;
         while (l <= r) {
             int mid = (l + r) >> 1; // 블루레이의 크기
