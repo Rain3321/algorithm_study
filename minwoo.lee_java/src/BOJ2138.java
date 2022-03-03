@@ -16,16 +16,15 @@ public class BOJ2138 {
         // 첫번째 스위치 눌렀을 때
         start[0] = !start[0];
         start[1] = !start[1];
-        solution(start, end, 1, 1);
+        solution(start, end, 1);
         // 첫번째 스위치를 누르지 않았을 때
-        solution(startCopy, end, 0, 1);
+        solution(startCopy, end, 0);
 
-        StringBuilder sb = new StringBuilder();
-        System.out.println((result == Integer.MAX_VALUE) ? sb.append(-1) : sb.append(result));
+        System.out.println((result == Integer.MAX_VALUE) ? -1 : result);
     }
 
-    private static void solution(boolean[] start, boolean[] end, int cnt, int idx) {
-        for (int i = idx; i < N; i++) {
+    private static void solution(boolean[] start, boolean[] end, int cnt) {
+        for (int i = 1; i < N; i++) {
             if (start[i - 1] != end[i - 1]) {
                 onOff(start, i);
                 cnt++;
@@ -46,9 +45,7 @@ public class BOJ2138 {
 
     private static void makeBulb(boolean[] bulb, String status) {
         for (int i = 0; i < status.length(); i++) {
-            if (status.charAt(i) == '1') {
-                bulb[i] = false;
-            } else {
+            if (status.charAt(i) == '0') {
                 bulb[i] = true;
             }
         }
