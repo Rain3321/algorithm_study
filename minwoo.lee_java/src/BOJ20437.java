@@ -26,7 +26,7 @@ public class BOJ20437 {
                     getLength(i);
                 }
             }
-            if (shortLen == Integer.MAX_VALUE || longLen == 0) {
+            if (longLen == 0) {
                 sb.append(-1 + "\n");
             } else {
                 sb.append(shortLen + " " + longLen + "\n");
