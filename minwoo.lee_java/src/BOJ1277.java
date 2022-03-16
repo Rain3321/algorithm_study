@@ -37,11 +37,9 @@ public class BOJ1277 {
 
 
     private static void dijkstra() {
-        PriorityQueue<Node> pq = new PriorityQueue<>((o1, o2) -> {
-            return (int) (o1.dist * 1000) - (int) (o2.dist * 1000);
-        });
+        PriorityQueue<Node> pq = new PriorityQueue<>(Comparator.comparingInt(o -> (int) o.dist));
         boolean[] discovered = new boolean[N + 1];
-        pq.add(new Node(1, location[1][0], location[1][1], W, 0));
+        pq.add(new Node(1, location[1][0], location[1][1], 0));
         while (!pq.isEmpty()) {
             Node cur = pq.poll();
             if (cur.num == N) {
@@ -53,13 +51,9 @@ public class BOJ1277 {
                 if (discovered[next]) {
                     continue;
                 }
-                if (connect[cur.num][next]) {
-                    pq.add(new Node(next, location[next][0], location[next][1], cur.w, cur.dist));
-                } else {
-                    double distance = getDist(cur.x, cur.y, location[next][0], location[next][1]);
-                    if (cur.w > 0 && distance <= M) {
-                        pq.add(new Node(next, location[next][0], location[next][1], cur.w - 1, cur.dist + distance));
-                    }
+                double distance = (connect[cur.num][next]) ? 0.0 : getDist(cur.x, cur.y, location[next][0], location[next][1]);
+                if (distance <= M) {
+                    pq.add(new Node(next, location[next][0], location[next][1], cur.dist + distance));
                 }
             }
         }
@@ -70,14 +64,13 @@ public class BOJ1277 {
     }
 
     static class Node {
-        int num, x, y, w;
+        int num, x, y;
         double dist;
 
-        Node(int num, int x, int y, int w, double dist) {
+        Node(int num, int x, int y, double dist) {
             this.num = num;
             this.x = x;
             this.y = y;
-            this.w = w;
             this.dist = dist;
         }
     }
