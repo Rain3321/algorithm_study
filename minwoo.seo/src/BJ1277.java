@@ -47,7 +47,7 @@ public class BJ1277 {
           continue;
         }
         double dis = getDistance(cur, j);
-        if (distance[j] > distance[cur] + dis) {
+        if (dis <= M && distance[j] > distance[cur] + dis) {
           distance[j] = distance[cur] + dis;
         }
       }
