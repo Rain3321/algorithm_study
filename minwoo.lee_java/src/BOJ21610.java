@@ -3,7 +3,7 @@ import java.io.*;
 
 public class BOJ21610 {
     static int N, M;
-    static int[][] A;
+    static int[][] map;
     static int[][] direction = {{0, -1}, {-1, -1}, {-1, 0}, {-1, 1}, {0, 1}, {1, 1}, {1, 0}, {1, -1}};
     static Queue<Cloud> clouds;
 
@@ -12,11 +12,11 @@ public class BOJ21610 {
         StringTokenizer st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
-        A = new int[N][N];
+        map = new int[N][N];
         for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
             for (int j = 0; j < N; j++) {
-                A[i][j] = Integer.parseInt(st.nextToken());
+                map[i][j] = Integer.parseInt(st.nextToken());
             }
         }
         clouds = new LinkedList<>();
@@ -32,47 +32,47 @@ public class BOJ21610 {
             int queueSize = clouds.size();
             while (queueSize-- > 0) {
                 Cloud c = clouds.poll();
-                int moveX = step1(c.x, direction[d - 1][0], s);
-                int moveY = step1(c.y, direction[d - 1][1], s);
-                A[moveX][moveY] += 1;
+                int moveX = moveCloud(c.x, direction[d - 1][0], s);
+                int moveY = moveCloud(c.y, direction[d - 1][1], s);
+                map[moveX][moveY] += 1;
                 clouds.add(new Cloud(moveX, moveY));
             }
             while (!clouds.isEmpty()) {
                 Cloud c = clouds.poll();
-                step4(c.x, c.y);
+                copyWater(c.x, c.y);
             }
-            step5();
+            declineWater();
         }
         System.out.println(getSum());
 
     }
 
-    private static int step1(int point, int dir, int s) {
+    private static int moveCloud(int point, int dir, int s) {
         int next = point + s % N * dir;
         return next >= 0 ? next % N : N + next;
     }
 
-    private static void step4(int x, int y) {
+    private static void copyWater(int x, int y) {
         int cnt = 0;
         for (int d = 1; d <= 7; d += 2) {
             int nx = x + direction[d][0];
             int ny = y + direction[d][1];
-            if (rangeCheck(nx, ny) && Math.abs(A[nx][ny]) > 0) {
+            if (rangeCheck(nx, ny) && Math.abs(map[nx][ny]) > 0) {
                 cnt++;
             }
         }
-        A[x][y] = -(A[x][y] + cnt);
+        map[x][y] = -(map[x][y] + cnt);
     }
 
-    private static void step5() {
+    private static void declineWater() {
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
-                if (A[i][j] >= 2) {
-                    A[i][j] -= 2;
+                if (map[i][j] >= 2) {
+                    map[i][j] -= 2;
                     clouds.add(new Cloud(i, j));
                 }
-                if (A[i][j] < 0) {
-                    A[i][j] = -(A[i][j]);
+                if (map[i][j] < 0) {
+                    map[i][j] = -(map[i][j]);
                 }
             }
         }
@@ -82,7 +82,7 @@ public class BOJ21610 {
         int sum = 0;
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
-                sum += A[i][j];
+                sum += map[i][j];
             }
         }
         return sum;
