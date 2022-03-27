@@ -77,6 +77,7 @@ public class BOJ9944 {
 
         }
     }
+
     private static void back(int x, int y, int cnt, int d) {
         for (int i = 0; i < cnt; i++) {
             discovered[x][y] = false;
@@ -86,6 +87,6 @@ public class BOJ9944 {
     }
 
     private static boolean check(int nx, int ny) {
-        return (0 <= nx && nx < N && 0 <= ny && ny < M) ? true : false;
+        return 0 <= nx && nx < N && 0 <= ny && ny < M;
     }
 }
