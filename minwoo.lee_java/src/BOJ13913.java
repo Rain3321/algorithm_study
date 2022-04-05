@@ -4,7 +4,7 @@ import java.util.Queue;
 import java.util.Scanner;
 
 public class BOJ13913 {
-    private static final int endPoint = 100001;
+    private static final int ENDPOINT = 100001;
     private static StringBuilder sb;
 
     public static void main(String[] args) {
@@ -26,7 +26,7 @@ public class BOJ13913 {
     }
 
     private static void bfs(int n, int k) {
-        MoveInfo[] discovered = new MoveInfo[endPoint];
+        MoveInfo[] discovered = new MoveInfo[ENDPOINT];
         Arrays.fill(discovered, null);
         discovered[k] = new MoveInfo(-1, 0);
         Queue<Integer> queue = new LinkedList<>();
@@ -57,7 +57,7 @@ public class BOJ13913 {
 
 
     private static boolean rangeCheck(int next) {
-        return 0 <= next && next < endPoint;
+        return 0 <= next && next < ENDPOINT;
     }
 
     static class MoveInfo {
