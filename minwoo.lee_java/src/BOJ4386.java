@@ -14,8 +14,7 @@ public class BOJ4386 {
             st = new StringTokenizer(br.readLine());
             double x = Double.parseDouble(st.nextToken());
             double y = Double.parseDouble(st.nextToken());
-            Star star = new Star(x, y);
-            stars[i] = star;
+            stars[i] = new Star(x, y);
         }
         System.out.printf("%.2f", solution());
     }
