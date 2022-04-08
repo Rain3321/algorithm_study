@@ -27,7 +27,6 @@ public class BOJ13913 {
 
     private static void bfs(int n, int k) {
         MoveInfo[] discovered = new MoveInfo[ENDPOINT];
-        Arrays.fill(discovered, null);
         discovered[k] = new MoveInfo(-1, 0);
         Queue<Integer> queue = new LinkedList<>();
         queue.add(k);
