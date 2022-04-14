@@ -40,7 +40,7 @@ public class BOJ1976 {
 
     private static void check() {
         for (int i = 0; i < plan.length - 1; i++) {
-            if (find(plan[i]) != find(plan[i + 1])) {
+            if (parent[plan[i]] != parent[plan[i + 1]]) {
                 System.out.println("NO");
                 return;
             }
