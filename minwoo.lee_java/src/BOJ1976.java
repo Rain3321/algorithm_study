@@ -24,7 +24,7 @@ public class BOJ1976 {
         for (int i = 1; i <= N; i++) {
             for (int j = 1; j <= N; j++) {
                 if (map[i][j] != 0) {
-                    if (find(i) != find(j)) {
+                    if (parent[i] != parent[j]) {
                         union(i, j);
                     }
                 }
@@ -62,7 +62,7 @@ public class BOJ1976 {
         if (parent[num] == num) {
             return num;
         }
-        return find(parent[num]);
+        return parent[num] = find(parent[num]);
     }
 
     private static void makeSet() {
