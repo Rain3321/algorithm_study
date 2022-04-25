@@ -64,7 +64,6 @@ public class BOj20924 {
             }
             discovered[node.num] = true;
             solution(node.num, pillar, branchLength + node.edge, findGigaNode);
-            discovered[node.num] = false;
         }
     }
 
